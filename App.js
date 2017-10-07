@@ -12,29 +12,41 @@ import {
   View
 } from 'react-native';
 
+import PushNotification from 'react-native-push-notification';
+
 const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
   android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
+    'Shake or press menu button for dev menu. joder import',
 });
 
 export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
         <Text style={styles.instructions}>
           To get started, edit App.js
         </Text>
         <Text style={styles.instructions}>
           {instructions}
         </Text>
+        <Text onPress={showNotification}>Show notification</Text>
+        <Text onPress={showDelayedNotification}> Show notification after 5 seconds</Text>
       </View>
     );
   }
+}
+
+function showNotification () {
+  PushNotification.localNotification({
+    message: 'Hello World!'
+  })
+}
+
+function showDelayedNotification () {
+  PushNotification.localNotificationSchedule({
+    message: 'Hello World!',
+    date: new Date(Date.now() + (5 * 1000))
+  });
 }
 
 const styles = StyleSheet.create({
