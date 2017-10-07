@@ -13,14 +13,22 @@ import {
 } from 'react-native';
 
 import PushNotification from 'react-native-push-notification';
+import PushController from './PushController';
 
 const instructions = Platform.select({
   android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu. joder import',
+    'Shake or press menu button for dev menu. Otro com  ',
 });
 
-export default class App extends Component<{}> {
+
+
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {token: false};
+  }
   render() {
+    
     return (
       <View style={styles.container}>
         <Text style={styles.instructions}>
@@ -29,25 +37,22 @@ export default class App extends Component<{}> {
         <Text style={styles.instructions}>
           {instructions}
         </Text>
-        <Text onPress={showNotification}>Show notification</Text>
-        <Text onPress={showDelayedNotification}> Show notification after 5 seconds</Text>
+        
+        <Text onPress={showNotification}> Show notification</Text>
+        <PushController/>
       </View>
     );
   }
 }
 
+
+
 function showNotification () {
-  PushNotification.localNotification({
-    message: 'Hello World!'
-  })
+  // PushNotification.localNotification({
+  //   message: 'Hello World!'
+  // })
 }
 
-function showDelayedNotification () {
-  PushNotification.localNotificationSchedule({
-    message: 'Hello World!',
-    date: new Date(Date.now() + (5 * 1000))
-  });
-}
 
 const styles = StyleSheet.create({
   container: {
