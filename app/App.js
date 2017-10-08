@@ -13,13 +13,12 @@ import {
 } from 'react-native';
 
 import PushNotification from 'react-native-push-notification';
-import PushController from './PushController';
+import PushController from './components/Push/index';
 
 const instructions = Platform.select({
   android: 'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu. Otro com  ',
 });
-
 
 
 export default class App extends Component {
@@ -38,19 +37,10 @@ export default class App extends Component {
           {instructions}
         </Text>
         
-        <Text onPress={showNotification}> Show notification</Text>
         <PushController/>
       </View>
     );
   }
-}
-
-
-
-function showNotification () {
-  // PushNotification.localNotification({
-  //   message: 'Hello World!'
-  // })
 }
 
 

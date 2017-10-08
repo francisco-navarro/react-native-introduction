@@ -3,7 +3,6 @@ import { Platform, Text } from 'react-native';
 import PushNotification from 'react-native-push-notification';
 
 
-
 export default class PushController extends Component {
   constructor(props) {
     super(props);
@@ -31,8 +30,6 @@ export default class PushController extends Component {
     });
   }
   render() {
-    return (
-      <Text>[]</Text>
-    );
+    return null;
   }
 }
