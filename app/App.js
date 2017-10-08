@@ -7,19 +7,14 @@
 import React, { Component } from 'react';
 import {
   Platform,
-  StyleSheet,
   Text,
   View
 } from 'react-native';
 
 import PushNotification from 'react-native-push-notification';
 import PushController from './components/Push/index';
-
-const instructions = Platform.select({
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu. Otro com  ',
-});
-
+import LoginController from './screens/Login/index'
+import styles from './config/styles';
 
 export default class App extends Component {
   constructor(props) {
@@ -27,38 +22,12 @@ export default class App extends Component {
     this.state = {token: false};
   }
   render() {
-    
     return (
       <View style={styles.container}>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-        
+        <Text style={styles.title}>Salva</Text>
+        <LoginController/>        
         <PushController/>
       </View>
     );
   }
 }
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
