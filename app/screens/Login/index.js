@@ -17,14 +17,15 @@ export default class LoginController extends Component {
           style={styles.inputText}
           onChangeText={(text) => this.setState({text})}
           placeholder='Correo electronico'
-          value={this.state.text}
+          value={this.state.user}
         />
 
         <TextInput
           style={styles.inputText}
+          secureTextEntry={true}
           onChangeText={(text) => this.setState({text})}
           placeholder='Contraseña'
-          value={this.state.text}
+          value={this.state.pwd}
         />
 
         <TouchableNativeFeedback background={TouchableNativeFeedback.SelectableBackground()}>
@@ -51,8 +52,7 @@ const styles = StyleSheet.create({
   },
   inputText: {
     height: 40,
-    borderColor: 'gray',
-    borderWidth: 1,
+    borderWidth: 0,
     margin: 15,
     width: 260,
   }
