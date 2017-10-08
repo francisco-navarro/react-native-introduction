@@ -20,7 +20,8 @@ export default class PushController extends Component {
           title: notification.title,
           message: notification.body,
           largeIcon: "icon", // (optional) default: "ic_launcher"
-          smallIcon: "ic_notification", // (optional) default: "ic_notification" with fallback for "ic_launcher"
+          smallIcon: "ic_launcher", // (optional) default: "ic_notification" with fallback for "ic_launcher"
+          color: "#ffcf0b",
           smallText: notification.body
         })
       },
