@@ -18,7 +18,11 @@ export default class PushController extends Component {
       // (required) Called when a remote or local notification is opened or received
       onNotification: function(notification) {
         PushNotification.localNotification({
-          message: notification.body
+          title: notification.title,
+          message: notification.body,
+          largeIcon: "icon", // (optional) default: "ic_launcher"
+          smallIcon: "ic_notification", // (optional) default: "ic_notification" with fallback for "ic_launcher"
+          smallText: notification.body
         })
       },
       // ANDROID ONLY: GCM Sender ID (optional - not required for local notifications, but is need to receive remote push notifications)
