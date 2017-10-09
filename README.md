@@ -4,13 +4,22 @@ https://github.com/zo0r/react-native-push-notification
 
 
 ## Instalación
-``` npm i
-``` react-native link
 
-## Arrancar en dispositivo 
-``` react-native run-android
+``` 
+npm install
+react-native link
+```
+
+## Arrancar en dispositivo
+
+``` 
+react-native run-android
+```
 
 ## Release en android
+
 Hay que configurar la ruta del keystore en gradle
-``` cd android && ./gradlew assembleRelease
-``` android/app/build/outputs/apk/app-release.apk
+```
+cd android && ./gradlew assembleRelease
+android/app/build/outputs/apk/app-release.apk
+``` 
