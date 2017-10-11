@@ -111,9 +111,9 @@ android {
         release {
             if (project.hasProperty('MYAPP_RELEASE_STORE_FILE')) {
                 storeFile file(MYAPP_RELEASE_STORE_FILE)
-                storePassword MYAPP_RELEASE_STORE_PHRASE
+                storePassword "$System.env.MYAPP_RELEASE_STORE_PHRASE"
                 keyAlias MYAPP_RELEASE_KEY_ALIAS
-                keyPassword MYAPP_RELEASE_KEY_PHRASE
+                keyPassword "$System.env.MYAPP_RELEASE_KEY_PHRASE"
             }
         }
     }
