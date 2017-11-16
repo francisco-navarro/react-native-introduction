@@ -93,6 +93,9 @@ def enableSeparateBuildPerCPUArchitecture = false
  */
 def enableProguardInReleaseBuilds = false
 
+def props = new Properties()
+file("../../../gradle-android.properties").withInputStream { props.load(it) }
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
@@ -109,11 +112,11 @@ android {
     }
     signingConfigs {
         release {
-            if (project.hasProperty('MYAPP_RELEASE_STORE_FILE')) {
-                storeFile file(MYAPP_RELEASE_STORE_FILE)
-                storePassword MYAPP_RELEASE_STORE_PASSWORD
-                keyAlias MYAPP_RELEASE_KEY_ALIAS
-                keyPassword MYAPP_RELEASE_KEY_PASSWORD
+            if (project.hasProperty('android.release.keystore')) {
+                storeFile file(android.release.keystore)
+                storePassword props.getProperty("android.release.store.phrase")
+                keyAlias android.release.key.alias
+                keyPassword props.getProperty("android.release.key.phrase")
             }
         }
     }
