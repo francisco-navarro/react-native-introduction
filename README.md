@@ -44,7 +44,8 @@ Arrancar emulador
 
 Debug en http://localhost:8081/debugger-ui
 
-### Ver puertos
+### ver puertos
+
 sudo lsof -PiTCP -sTCP:LISTEN
 
 ## Release
