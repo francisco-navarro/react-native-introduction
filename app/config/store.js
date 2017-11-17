@@ -1,3 +1,9 @@
-import { createStore } from 'redux'
-import RootReducer from '../Reducers/'
-const store = createStore(RootReducer)
+import { createStore, applyMiddleware } from 'redux';
+import reducers from '../reducers';
+
+const middleWare = [];
+
+const createStoreWithMiddleware = applyMiddleware(...middleWare)(createStore);
+export function makeStore() {
+  return createStoreWithMiddleware(reducers);
+}
