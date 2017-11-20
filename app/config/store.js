@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from 'redux';
-import reducers from '../reducers/index';
+import RootReducer from '../reducers/root';
 import { createLogger } from 'redux-logger';
 import immutableCheckMiddleWare from 'redux-immutable-state-invariant';
 
@@ -21,5 +21,5 @@ middleWare.push(loggerMiddleware);
 const createStoreWithMiddleware = applyMiddleware(...middleWare)(createStore);
 export function makeStore() {
   console.log('make store');
-  return createStoreWithMiddleware();
+  return createStoreWithMiddleware(RootReducer);
 }

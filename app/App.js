@@ -5,6 +5,7 @@
  */
 
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
 import {
   Platform,
   Text,
@@ -21,7 +22,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {token: false};
-    console.log(makeStore);
+    makeStore();
   }
   render() {
     return (
