@@ -28,9 +28,19 @@ export default class LoginController extends Component {
           value={this.state.pwd}
         />
 
-        <TouchableNativeFeedback background={TouchableNativeFeedback.SelectableBackground()}>
+        <TouchableNativeFeedback 
+          background={TouchableNativeFeedback.SelectableBackground()}
+          onPress={this.props.login}>
           <View style={styles.button}>
-            <Text style={styles.buttonText}>TouchableNativeFeedback</Text>
+            <Text style={styles.buttonText}>Acceder</Text>
+          </View>
+        </TouchableNativeFeedback>
+
+        <TouchableNativeFeedback 
+          background={TouchableNativeFeedback.SelectableBackground()}
+          onPress={this.props.reset}>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>Reset</Text>
           </View>
         </TouchableNativeFeedback>
 

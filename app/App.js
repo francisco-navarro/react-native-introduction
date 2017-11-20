@@ -14,23 +14,26 @@ import {
 
 import PushNotification from 'react-native-push-notification';
 import PushController from './components/Push/index';
-import LoginController from './screens/Login/index'
+import LoginContainer from './screens/Login/container'
 import styles from './config/styles';
 import { makeStore } from './config/store';
+
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {token: false};
-    makeStore();
+    this.store = makeStore();
   }
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Salva</Text>
-        <LoginController/>        
-        <PushController/>
-      </View>
+      <Provider store={this.store}>
+        <View style={styles.container}>
+          <Text style={styles.title}>Salva</Text>
+          <LoginContainer/>        
+          <PushController/>
+        </View>
+      </Provider>
     );
   }
 }

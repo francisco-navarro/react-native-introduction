@@ -1,11 +1,13 @@
-export default (state = false, action) => {
+const DEFAULT_STATE = {logged: false};
+
+export default (state = DEFAULT_STATE, action) => {
   switch (action.type) {
   case 'LOGIN':
-    return state = true;
+    return {...state, logged: true};
   case 'LOGOUT':
-    return state = false;
+    return {...state, logged: false};
   case 'RESET':
-    return 0;
+    return {...state, logged: false};
   default:
     return state;
   }
