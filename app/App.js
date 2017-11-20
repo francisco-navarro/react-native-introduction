@@ -18,6 +18,7 @@ import LoginContainer from './screens/Login/container'
 import styles from './config/styles';
 import { makeStore } from './config/store';
 
+// TODO: send to screens with https://github.com/aksonov/react-native-redux-router
 
 export default class App extends Component {
   constructor(props) {
