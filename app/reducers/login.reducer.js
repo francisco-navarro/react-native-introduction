@@ -1,9 +1,9 @@
-export default (state = 0, action) => {
+export default (state = false, action) => {
   switch (action.type) {
-  case 'INCREMENT':
-    return state + 1;
-  case 'DECREMENT':
-    return state - 1;
+  case 'LOGIN':
+    return state = true;
+  case 'LOGOUT':
+    return state = false;
   case 'RESET':
     return 0;
   default:
