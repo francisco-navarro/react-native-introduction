@@ -1,20 +1,11 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import {
-  Platform,
-  Text,
-  View
-} from 'react-native';
-
+import { Platform, Text, View } from 'react-native';
+import { Router, Scene, Stack } from 'react-native-router-flux';
 import PushNotification from 'react-native-push-notification';
 import PushController from './components/Push/index';
-import LoginContainer from './screens/Login/container'
+import LoginContainer from './screens/Login/container';
+import HomeController from './screens/Home/index';
 import styles from './config/styles';
 import { makeStore } from './config/store';
 
@@ -29,7 +20,12 @@ export default class App extends Component {
       <Provider store={this.store}>
         <View style={styles.container}>
           <Text style={styles.title}>Salva</Text>
-          <LoginContainer/>        
+          <Router>
+            <Stack key="root">
+              <Scene key="login" component={LoginContainer} title="Login"/>
+              <Scene key="register" component={HomeController} title="Register"/>
+            </Stack>
+          </Router>
           <PushController/>
         </View>
       </Provider>

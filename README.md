@@ -56,3 +56,6 @@ export MYAPP_RELEASE_KEY_PHRASE=luiscobol
 cd android && ./gradlew assembleRelease 
 android/app/build/outputs/apk/app-release.apk
 ```
+### Navigation
+
+See https://medium.com/the-react-native-log/thousand-ways-to-navigate-in-react-native-f7a1e311a0e8
