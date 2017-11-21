@@ -59,3 +59,5 @@ android/app/build/outputs/apk/app-release.apk
 ### Navigation
 
 See https://medium.com/the-react-native-log/thousand-ways-to-navigate-in-react-native-f7a1e311a0e8
+
+React native navigation: https://wix.github.io/react-native-navigation/#/usage
