@@ -39,7 +39,8 @@ adb start-server
 ```
 Arrancar emulador
 
-` emulator -avd Nexus_4_API_25 ` 
+` android list avd `
+` $ANDROID_HOME/emulator/emulator -avd Nexus_4_API_25 -avd Nexus_4_API_25 ` 
 
 
 Debug en http://localhost:8081/debugger-ui
